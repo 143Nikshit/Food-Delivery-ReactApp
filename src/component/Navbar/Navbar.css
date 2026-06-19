@@ -1,0 +1,113 @@
+.mainContainer {
+    width: 100%;
+    background: linear-gradient(135deg, #ff6b35, #ff914d);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.foodlogo {
+    font-size: 35px;
+    animation: bounce 2s infinite;
+}
+
+.listItems {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.listItems li a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.listItems li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition: 0.3s ease;
+}
+
+.listItems li a:hover::after {
+    width: 100%;
+}
+
+.listItems li a:hover {
+    color: #fff8dc;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.listItems li:last-child a {
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.listItems li:last-child a:hover {
+    font-size: 16px;
+    background-color: #fff8dc;
+    color: #ff6b35;
+    transform: scale(1.1);
+    border-radius: 8px;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .listItems {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo{
+        font-size: 24px;
+    }
+}
