@@ -104,6 +104,7 @@ const Home = () => {
     }
 
   ]
+  
   return (
     <div>
       <Card cardData={cardData} />
