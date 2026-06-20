@@ -7,7 +7,7 @@ const Card = ({ cardData }) => {
         <div className='card-container'>
             {cardData.map((item) => {
                 return (
-                    <div className='card'>
+                    <div className='card' key={item.id}>
                         <h1>{item.name}</h1>
                         <img src={item.img} alt="" />
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>

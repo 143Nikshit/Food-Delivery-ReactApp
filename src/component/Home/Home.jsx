@@ -13,6 +13,7 @@ import misalpav from '../../assets/misalpav.jpg'
 import modak from '../../assets/modak.jpg'
 import nepal from '../../assets/nepal.jpg'
 import noodles from '../../assets/noodles.jpg'
+import panipuri from '../../assets/panipuri.jpg'
 import Card from '../card/Card'
 
 const Home = () => {
@@ -101,6 +102,12 @@ const Home = () => {
       name : "Noodles",
       img: noodles,
       price: 260
+    },
+    {
+      id : 15,
+      name : "Panipuri",
+      img: panipuri,
+      price: 120
     }
 
   ]
