@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Rajbhogthali from '../../assets/Rajbhogthali.jpg'
 import rajasthani from '../../assets/rajasthani.jpg'
 import bihar from '../../assets/bihar.jpg'
@@ -15,8 +15,11 @@ import nepal from '../../assets/nepal.jpg'
 import noodles from '../../assets/noodles.jpg'
 import panipuri from '../../assets/panipuri.jpg'
 import Card from '../card/Card'
+import { IoSearchOutline } from "react-icons/io5";
 
 const Home = () => {
+
+  let [search, setSearch] = useState("")
 
   let cardData = [
     {
@@ -111,9 +114,20 @@ const Home = () => {
     }
 
   ]
+
+  let filterData = cardData.filter((item) =>{
+    return item.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+  })
   
   return (
+    
     <div>
+      <div className='search'>
+        <div className='searchBar'>
+            <IoSearchOutline />
+            <input type="text" placeholder='Search Food Item' value={search} onChange={(e) => {setSearch(e.target.value)}}/>
+        </div>
+      </div>
       <Card cardData={cardData} />
     </div>
   )
