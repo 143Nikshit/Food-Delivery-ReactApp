@@ -15,7 +15,8 @@ import nepal from '../../assets/nepal.jpg'
 import noodles from '../../assets/noodles.jpg'
 import panipuri from '../../assets/panipuri.jpg'
 import Card from '../card/Card'
-import { IoSearchOutline } from "react-icons/io5";
+import { IoSearchOutline } from "react-icons/io5"
+import './Home.css'
 
 const Home = () => {
 
@@ -128,7 +129,7 @@ const Home = () => {
             <input type="text" placeholder='Search Food Item' value={search} onChange={(e) => {setSearch(e.target.value)}}/>
         </div>
       </div>
-      <Card cardData={cardData} />
+      <Card cardData={filterData} />
     </div>
   )
 }
