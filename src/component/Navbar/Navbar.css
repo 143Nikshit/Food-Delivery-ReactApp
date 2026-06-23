@@ -28,7 +28,7 @@ nav {
     transform: scale(1.05);
 }
 
-.foodlogo {
+.foodLogo {
     font-size: 35px;
     animation: bounce 2s infinite;
 }

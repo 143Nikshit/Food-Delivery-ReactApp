@@ -18,118 +18,121 @@ import Card from '../card/Card'
 import { IoSearchOutline } from "react-icons/io5"
 import './Home.css'
 
-const Home = () => {
+const Home = ({ cart, setCart }) => {
 
   let [search, setSearch] = useState("")
 
   let cardData = [
     {
-      id : 1,
-      name : "Rajbhogthali",
+      id: 1,
+      name: "Rajbhogthali",
       img: Rajbhogthali,
       price: 2100
     },
-     {
-      id : 2,
-      name : "Rajasthanispecial",
+    {
+      id: 2,
+      name: "Rajasthanispecial",
       img: rajasthani,
       price: 1100
     },
     {
-      id : 3,
-      name : "Biharspecial",
+      id: 3,
+      name: "Biharspecial",
       img: bihar,
       price: 510
     },
     {
-      id : 4,
-      name : "Delhispecial",
+      id: 4,
+      name: "Delhispecial",
       img: delhi,
       price: 450
     },
     {
-      id : 5,
-      name : "Gujaratspecial",
+      id: 5,
+      name: "Gujaratspecial",
       img: gujarat,
       price: 350
     },
     {
-      id : 6,
-      name : "Frankie",
+      id: 6,
+      name: "Frankie",
       img: frankie,
       price: 80
     },
     {
-      id : 7,
-      name : "Jelabi",
+      id: 7,
+      name: "Jelabi",
       img: jelabi,
       price: 550
     },
     {
-      id : 8,
-      name : "Kesar",
+      id: 8,
+      name: "Kesar",
       img: kesar,
       price: 850
     },
     {
-      id : 9,
-      name : "KolkataSpecial",
+      id: 9,
+      name: "KolkataSpecial",
       img: kolkata,
       price: 450
     },
     {
-      id : 10,
-      name : "MaharashtraSpecial",
+      id: 10,
+      name: "MaharashtraSpecial",
       img: maharashtra,
       price: 25
     },
     {
-      id : 11,
-      name : "Misalpav",
+      id: 11,
+      name: "Misalpav",
       img: misalpav,
       price: 180
     },
     {
-      id : 12,
-      name : "Modak",
+      id: 12,
+      name: "Modak",
       img: modak,
       price: 550
     },
     {
-      id : 13,
-      name : "NepalSpecial",
+      id: 13,
+      name: "NepalSpecial",
       img: nepal,
       price: 320
     },
     {
-      id : 14,
-      name : "Noodles",
+      id: 14,
+      name: "Noodles",
       img: noodles,
       price: 260
     },
     {
-      id : 15,
-      name : "Panipuri",
+      id: 15,
+      name: "Panipuri",
       img: panipuri,
       price: 120
     }
 
   ]
 
-  let filterData = cardData.filter((item) =>{
+  let filterData = cardData.filter((item) => {
     return item.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
   })
-  
+
   return (
-    
+
     <div>
       <div className='search'>
         <div className='searchBar'>
-            <IoSearchOutline />
-            <input type="text" placeholder='Search Food Item' value={search} onChange={(e) => {setSearch(e.target.value)}}/>
+          <IoSearchOutline />
+          <input type="text"
+            placeholder='Search Food Item'
+            value={search}
+            onChange={(e) => { setSearch(e.target.value) }} />
         </div>
       </div>
-      <Card cardData={filterData} />
+      <Card cardData={filterData} cart={cart} setCart={setCart} />
     </div>
   )
 }
